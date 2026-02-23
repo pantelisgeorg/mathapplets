@@ -39,7 +39,7 @@ const Index = () => {
               to={app.path}
               className="group block rounded-xl border border-border bg-card p-5 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50"
             >
-              <h3 className="text-lg font-semibold text-card-foreground group-hover:text-primary transition-colors mb-2">
+              <h3 className="text-lg font-semibold text-sky-400 transition-colors mb-2">
                   {app.title}
               </h3>
               <p className="text-sm text-muted-foreground">{app.desc}</p>
