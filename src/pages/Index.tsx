@@ -37,7 +37,7 @@ const Index = () => {
             Math Applets Collection
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A collection of interactive mathematical visualizations, ported from Java applets to modern web standards.
+            A collection of interactive mathematical visualizations built with HTML5 Canvas and math.js.
           </p>
         </header>
 
