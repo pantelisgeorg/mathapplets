@@ -1,11 +1,65 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Link } from "react-router-dom";
+import { Badge } from "@/components/ui/badge";
+
+const applets = [
+  { path: "/derivatives", title: "Derivatives", desc: "Explore functions and their derivatives with tangent lines.", tag: "Calculus" },
+  { path: "/simple-graph", title: "Simple Graph", desc: "Basic function plotter.", tag: "Graphing" },
+  { path: "/multi-graph", title: "Multi Graph", desc: "Plot multiple functions simultaneously.", tag: "Graphing" },
+  { path: "/families", title: "Families of Graphs", desc: "Explore function families with a parameter slider.", tag: "Graphing" },
+  { path: "/animated", title: "Animated Graph", desc: "Automatically animated function parameters.", tag: "Animation" },
+  { path: "/secant-tangent", title: "Secant & Tangent", desc: "Visualize the limit definition of the derivative.", tag: "Calculus" },
+  { path: "/composition", title: "Function Composition", desc: "Visualize f(g(x)).", tag: "Functions" },
+  { path: "/evaluator", title: "Evaluator", desc: "Evaluate mathematical expressions.", tag: "Tools" },
+  { path: "/parametric", title: "Parametric Curves", desc: "Plot curves defined by x(t) and y(t).", tag: "Parametric" },
+  { path: "/riemann", title: "Riemann Sums", desc: "Visualize integration via rectangle approximation.", tag: "Calculus" },
+  { path: "/integral-curves", title: "Integral Curves", desc: "Vector fields and direction fields.", tag: "Diff Eq" },
+  { path: "/scatter", title: "Scatter Plot", desc: "Plot data points and regression lines.", tag: "Statistics" },
+  { path: "/epsilon-delta", title: "Epsilon Delta", desc: "Visualize the formal definition of a limit.", tag: "Calculus" },
+];
+
+const tagColors: Record<string, string> = {
+  Calculus: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+  Graphing: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200",
+  Animation: "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200",
+  Functions: "bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200",
+  Tools: "bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-200",
+  Parametric: "bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200",
+  "Diff Eq": "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
+  Statistics: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200",
+};
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      <div className="mx-auto max-w-5xl px-4 py-8 md:py-12">
+        <header className="text-center mb-10">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-3">
+            Math Applets Collection
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            A collection of interactive mathematical visualizations, ported from Java applets to modern web standards.
+          </p>
+        </header>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {applets.map((app) => (
+            <Link
+              key={app.path}
+              to={app.path}
+              className="group block rounded-xl border border-border bg-card p-5 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50"
+            >
+              <div className="flex items-start justify-between mb-2">
+                <h3 className="text-lg font-semibold text-card-foreground group-hover:text-primary transition-colors">
+                  {app.title}
+                </h3>
+                <Badge variant="secondary" className={tagColors[app.tag] || ""}>
+                  {app.tag}
+                </Badge>
+              </div>
+              <p className="text-sm text-muted-foreground">{app.desc}</p>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
