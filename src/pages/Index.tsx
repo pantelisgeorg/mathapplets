@@ -17,16 +17,7 @@ const applets = [
   { path: "/epsilon-delta", title: "Epsilon Delta", desc: "Visualize the formal definition of a limit.", tag: "Calculus" },
 ];
 
-const tagColors: Record<string, string> = {
-  Calculus: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
-  Graphing: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200",
-  Animation: "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200",
-  Functions: "bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200",
-  Tools: "bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-200",
-  Parametric: "bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200",
-  "Diff Eq": "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
-  Statistics: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200",
-};
+const tagColors: Record<string, string> = {};
 
 const Index = () => {
   return (
@@ -48,14 +39,9 @@ const Index = () => {
               to={app.path}
               className="group block rounded-xl border border-border bg-card p-5 transition-all hover:-translate-y-1 hover:shadow-lg hover:border-primary/50"
             >
-              <div className="flex items-start justify-between mb-2">
-                <h3 className="text-lg font-semibold text-card-foreground group-hover:text-primary transition-colors">
+              <h3 className="text-lg font-semibold text-card-foreground group-hover:text-primary transition-colors mb-2">
                   {app.title}
-                </h3>
-                <Badge variant="secondary" className={tagColors[app.tag] || ""}>
-                  {app.tag}
-                </Badge>
-              </div>
+              </h3>
               <p className="text-sm text-muted-foreground">{app.desc}</p>
             </Link>
           ))}
