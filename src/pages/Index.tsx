@@ -46,6 +46,10 @@ const Index = () => {
             </Link>
           ))}
         </div>
+
+        <footer className="mt-10 py-4 border-t border-border text-center text-muted-foreground text-xs">
+          <p>© {new Date().getFullYear()} Math Applets Collection by George Pantelis. All rights reserved.</p>
+        </footer>
       </div>
     </div>
   );
