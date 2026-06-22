@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
+# Math Applets Collection
 
-## Project info
+A collection of interactive mathematics applets — originally written as Java applets — reimagined for the web using HTML5 Canvas, [Math.js](https://mathjs.org/), and React. Each applet lets you explore a concept from calculus, graphing, or statistics by typing expressions and manipulating parameters in real time.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Applets
 
-## How can I edit this code?
+| Applet | Description | Topic |
+| --- | --- | --- |
+| **Derivatives** | Explore functions and their derivatives with tangent lines. | Calculus |
+| **Simple Graph** | Basic function plotter. | Graphing |
+| **Multi Graph** | Plot multiple functions simultaneously. | Graphing |
+| **Families of Graphs** | Explore function families with a parameter slider. | Graphing |
+| **Animated Graph** | Automatically animate function parameters. | Animation |
+| **Secant & Tangent** | Visualize the limit definition of the derivative. | Calculus |
+| **Function Composition** | Visualize f(g(x)). | Functions |
+| **Evaluator** | Evaluate mathematical expressions. | Tools |
+| **Parametric Curves** | Plot curves defined by x(t) and y(t). | Parametric |
+| **Riemann Sums** | Visualize integration via rectangle approximation. | Calculus |
+| **Integral Curves** | Vector fields and direction fields. | Differential Equations |
+| **Scatter Plot** | Plot data points and regression lines. | Statistics |
+| **Epsilon Delta** | Visualize the formal definition of a limit. | Calculus |
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- [Vite](https://vitejs.dev/) — build tool and dev server
+- [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) — styling and UI components
+- [Math.js](https://mathjs.org/) — expression parsing and evaluation
+- HTML5 Canvas — plotting and rendering
+- [React Router](https://reactrouter.com/) — client-side routing
+- [Vitest](https://vitest.dev/) + [Testing Library](https://testing-library.com/) — testing
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Requires [Node.js](https://nodejs.org/) (18+) and npm.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
+cd mathapplets
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at the URL printed in your terminal (default `http://localhost:8080`).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Scripts
 
-**Use GitHub Codespaces**
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server. |
+| `npm run build` | Build for production. |
+| `npm run build:dev` | Build using development mode. |
+| `npm run preview` | Preview the production build locally. |
+| `npm run lint` | Run ESLint. |
+| `npm test` | Run the test suite once. |
+| `npm run test:watch` | Run tests in watch mode. |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/      Shared components (AppletLayout, MathCanvas, NavLink) and shadcn/ui
+├── pages/           One page per applet, plus Index (home) and NotFound
+├── hooks/           Custom React hooks
+├── integrations/    Supabase client
+├── lib/             Utilities
+└── test/            Test setup
+```
 
-This project is built with:
+## License
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Released under the [MIT License](LICENSE). Copyright © George Pantelis.
 
-## How can I deploy this project?
+## Background
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This is a modern web-based version of an old source code for JAVA applets (by David J. Eck) that I found searching the internet. The applet source code can still be run with Java JDKs 8–17. We built the web-based version using HTML5 Canvas and Math.js together with the Cline AI editor using DeepSeek and Gemini 3 preview LLMs.
